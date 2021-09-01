@@ -32,6 +32,10 @@ module.exports = {
                 'documents',
                 'integrating-in-build'
             ],
+            '/tutorials/': [
+                '',
+                'interactive-views'
+            ],
             // fallback
             '/': [
                 ''        /* / */
