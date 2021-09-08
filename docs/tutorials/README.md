@@ -2,44 +2,49 @@
 
 This tutorial will guide you through setting up a basic Substrate project.
 
+
 ## Install Substrate
 
-with [npm](https://www.npmjs.com/get-npm) installed, run: `npm install -g substrate`
+<!-- You'll need to install Substrate on your device, if it isn't already.
+
+Refer to [Getting started](../guide/getting-started.md) -->
+
+With [npm](https://www.npmjs.com/get-npm) installed, run: `npm install -g substrate`
 
 This will make a command line utility, `substrate`, available globally.
 
-**You'll only need to do this once, if Substrate isn't already installed in your working environment.**
+**You'll only need to do this once, if Substrate isn't already installed.**
 
 
 ## Create a Substrate document
 
-In your file explorer or coding software of choice, create a new folder for your project. Give it an eloquent name, let's say _hello-substrate_.
+In your file explorer or coding software of choice, create a new folder for your project. Name that folder `hello-substrate`.
 
-Create a new file in this folder, _hello.explorable.md_.
+Then, create a new file in this folder. Name it `hello.explorable.md`.
 
-Add some text to it:
-```
+Add the following line to `hello.explorable.md` :
+```md
 Hello Substrate!
 ```
 
 ## Launch the viewer
 
-Open a command line terminal and navigate to the _hello-substrate_ folder. Then, run `substrate`.
+Open a command line terminal and navigate to the `hello-substrate` folder. Then, run `substrate`.
 
-```
+```shell
 cd ./hello-substrate
 substrate
 ```
 
-**OR**, run `substrate` with the path to _hello-substrate_ as an argument.
+**OR**, run `substrate` with the path to `hello-substrate` as an argument.
 
-```
+```shell
 substrate ./hello-substrate
 ```
 
 You should see the following output:
 
-```
+```shell
 Substrate server listening on port 5000
       [found] hello.explorable.md
 ```
@@ -48,27 +53,27 @@ Open a web browser and navigate to `localhost:5000`
 
 ![An image](./hello-1.png)
 
-Bam! Before your eyes is the Substrate document you've just created, as visualized in Substrate viewer.
+Bam! Before your eyes is a human-friendly representation of your document, in the Substrate viewer.
 
 It's a tad bland-looking, isn't it? Also, where's the code?
 
 Don't worry, we're getting there!
 
 
-## Format the document
+## Make it prettier
 
-Since it's a Markdown file (_.md_ extension), the default content of our document is text meant to be read by humans.
+Since your newly created document is a Markdown file - `.md` being its extension - its content is text meant to be read by humans, unless specified otherwise.
 
-`Hello Substrate!` is just that: text.
+" Hello Substrate! " is just that: text. And we can use Markdown syntax to make that text more visually appealing.
 
-We can use Markdown syntax to make it more visually appealing. Let's edit hello.explorable.md like so:
+Edit `hello.explorable.md` like so:
 
-```markdown
+```md
 # Hello Substrate!
 This is a **Substrate** document. It is _very_ nice to read.
 ```
 
-Then let's go back to our web browser. The page reloaded automatically, and looks better now:
+Then head back to your web browser. The page reloaded automatically, and looks better now:
 
 ![An image](./hello-2.png)
 
@@ -76,9 +81,9 @@ Then let's go back to our web browser. The page reloaded automatically, and look
 
 A Substrate document is part Markdown text, part JavaScript code useable as-is.
 
-While the default content of Substrate documents is Markdown text, as we've seen, we can intersped it with executable JavaScript code inside code blocks.
+While the default content of a Substrate document is Markdown text, as we've seen, that text can be intersped with executable JavaScript code inside code blocks.
 
-Let's edit hello.explorable.md like so:
+Edit `hello.explorable.md` like so :
 ~~~md
 # Hello Substrate!
 This is a **Substrate** document. It is _very_ nice to read.
@@ -91,13 +96,13 @@ console.log('hello substrate')
 
 The JavaScript code block shows in the viewer, formated as such.
 
-**Moreover, if you open the browser's console, you'll notice that 'hello substrate' got printed there. This is because the JavaScript code inside of the block executed.**
+Moreover, if you open the browser's console, you'll notice that 'hello substrate' got printed there. **This is because the code contained in the JavaScript block executed on the page !**
 
-## More documents
+## Create an importable document
 
-Create another Substrate document in your project's folder, and name this one _world.explorable.md_.
+Create a second Substrate document in your project's folder. Name this one `world.explorable.md`.
 
-Fill it with the following content:
+Fill it with the following content :
 
 ~~~md
 # World
@@ -115,19 +120,22 @@ export default world
 ```
 ~~~
 
-Use the menu button in the top-left corner of the page to navigate to that new document, 'world'.
+This instructs JavaScript to do two things :
+- Declare a constant, `world`, holding a reference to an object;
+- Export `world` so that this object can be accessed from other files.
+
+Because these two lines of code are inside two distinct JavaScript blocks, Markdown text can be squeezed in between them - in this case, `## Exports` . 
+
+In the browser, you can use the menu button in the top-left corner of the page to navigate to the new document, 'world'. It should look like this :
 
 ![An image](./hello-4.png)
 
-We do two things here:
-- Declare a constant, `world`;
-- Export `world` to be importable from other files.
 
-Here, we do these two things in two distinct JavaScript blocks, only to intersped the code with explanatory Markdown text (the 'Exports' subtitle). We could just as well have placed all of the JavaScript code inside a single block.
+## Use a document as a dependency
 
-Go back to our first document, _hello.explorable.md_.
+Finally, let's make `hello.explorable.md` use `world.explorable.md`'s exported module.
 
-Append it with this:
+Append `hello.explorable.md`, with the following lines:
 
 ~~~md
 ### Let's log the number of dinos to the console.
@@ -141,3 +149,5 @@ console.log(world.dinosaurs)
 Open the browser's console. The number of dinosaurs in the world should be printed there, below 'hello substrate'!
 
 ![An image](./hello-6.png)
+
+It's worth noting that this would work just as well if `world.explorable.md` was, instead of a Substrate document, a JavaScript file containing only the JavaScript code found in `world.explorable.md`.
