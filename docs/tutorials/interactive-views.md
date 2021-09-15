@@ -65,7 +65,7 @@ imports an external dependency, [Snabby](https://www.skypack.dev/view/snabby)**,
 
 Furthermore, it's worth noting that **explorable blocks with a view** (ending with `` `html...` ``) **can't contain import statements.** When that happens, an error is thrown and neither the view nor the imports work.
 
-In the viewer, 'hello' should show up.
+In the viewer, **'hello'** should show up.
 
 ![An image](./views-1.png)
 
@@ -191,9 +191,9 @@ That's better!
 
 ## Insert a canvas element
 
-While it's awesome to be able to embed a DOM structure into a document and interact with them, some code is meant to ultimately draw things to the screen in more of a freestyle fashion - as is the case in most videogames. That's what the canvas element is for.
+While it's awesome to be able to embed a DOM structure into a document and interact with it, some code is meant to ultimately draw things to the screen in more of a freestyle fashion - as is the case in most videogames, for example. That's what the canvas element is for.
 
-It's as easy to add a canvas to a view as any other HTML element. But in order to keep things nice and clean, let's have information for rendering to the canvas stored in a separate file.
+It's as easy to add a canvas to a view as any other HTML element. But, in order to keep things nice and clean, let's have information for rendering to the canvas stored in a separate file. That will be useful later on.
 
 In your project folder, create a subfolder, `lib`, where all local dependencies of `index.explorable.md` will go.
 
@@ -420,7 +420,7 @@ import {Rect, Renderer, state} from './globals.explorable.md'
 ```
 ~~~
 
-In addition to pointing correctly to imports and `buttonCount`, this function doesn't use hardcoded 'magic numbers' anymore to render the rectangle. Instead, it relies on properties of globally-accessible objects. This paves the way for more potential interactivity.
+In addition to pointing correctly to imports and `buttonCount`, this function doesn't use hardcoded 'magic numbers' anymore to render the rectangle. Instead, it relies on properties of imported objects. This paves the way for more potential interactivity.
 
 `state.buttonCount` is factored into the x component of the rectangle's drawing position, which was our objective. And through `Rect`'s properties, we've changed the rectangle's color and size.
 
@@ -428,7 +428,7 @@ In addition to pointing correctly to imports and `buttonCount`, this function do
 
 Because the views are updated efficiently - with the minimum required amount of disruption - our canvas element doesn't get re-created every time the button is clicked and `update()` is called. Good thing!
 
-We could also add event listeners to the canvas to detect clicks, mouse position, key presses, etc. pretty much anything that can be done on a regular webpage can be done here.
+We could also add event listeners to the canvas to detect clicks, mouse position, key presses, etc. Pretty much anything that can be done on a regular webpage can be done here.
 
 
 ## Merge the views
