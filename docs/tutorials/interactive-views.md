@@ -339,7 +339,7 @@ Does that work? No, it doesn't. An error is thrown because `buttonCount` doesn't
 
 A simple workaround would be to pass `buttonCount` to `renderScene()`. That would do it nicely.
 
-However, in a lot of cases, rendering depends on a vast amount of information, all of which can't always be passed to the rendering function. A more interesting approach, then, is to put information concerning the application's state in a module (or modules) so it can be imported whenever required.
+However, in a lot of cases, rendering depends on a vast amount of information, all of which can't always be passed to the rendering function. A more interesting approach, then, is to put information describing the application's state in a module (or modules) so it can be imported whenever required.
 
 In the `lib` subfolder, create a new document, `globals.explorable.md`, with the following content:
 
