@@ -44,5 +44,8 @@ module.exports = {
         },
         sidebarDepth: 1,
         smoothScroll: false
+    },
+    extendsMarkdown: (md) => {
+        md.use(require('markdown-it-container'), 'tip')
     }
 }
