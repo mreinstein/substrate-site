@@ -35,6 +35,7 @@ module.exports = {
             '/tutorials/': [
                 '',
                 'interactive-views',
+                'views-in-dependencies',
                 'rollup-plugin'
             ],
             // fallback
