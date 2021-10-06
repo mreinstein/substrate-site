@@ -13,12 +13,12 @@ module.exports = {
             link: '/guide/',
         },
         {
-            text: 'Examples',
-            link: '/examples/',
-        },
-        {
             text: 'Tutorials',
             link: '/tutorials/',
+        },
+        {
+            text: 'Examples',
+            link: '/examples/',
         },
         {
             text: 'Github',
@@ -37,6 +37,9 @@ module.exports = {
                 'interactive-views',
                 'views-in-dependencies',
                 'rollup-plugin'
+            ],
+            '/examples/': [
+                ''
             ],
             // fallback
             '/': [

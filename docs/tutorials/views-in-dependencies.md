@@ -6,6 +6,11 @@ However, in can often be interesting to integrate HTML views in documents that a
 
 Let's enhance the project we've built in the previous tutorial, by adding a view to `lib/renderScene.explorable.md` to demonstrate its use.
 
+::: tip
+If you're not coming from the [previous tutorial](./interactive-views), you can download that completed project [here](../examples/interactive-views.zip).
+After unzipping it, you'll need to run `npm install` in the project's folder.
+:::
+
 In `lib/renderScene.explorable.md`, add this **explorable** block with an HTML view:
 
 ```js explorable
