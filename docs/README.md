@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: ''
+heroImage: '/logo_v1_cropped.png'
 heroText: Substrate
 tagline: Literate programming for Javascript
 actionText: Jump in →
