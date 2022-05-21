@@ -116,7 +116,3 @@ html`<div>
     <h1 class="banner">HELLO SUBSTRATE</h1>
 </div>`
 ```
-
-## Caveats
-
-* Because of a bug in hyperx (a dependency of snabby used for parsing JavaScript), elements in `html tags that can be self-closing (e.g. input) can't have a closing tag. svg elements don't work. Hopefully, that will get resolved soon. See [this issue](https://github.com/choojs/hyperx/issues/41).
